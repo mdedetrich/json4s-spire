@@ -4,6 +4,8 @@ scalaVersion := "2.11.1"
 
 crossScalaVersions := Seq("2.11.1","2.10.4")
 
+organization := "com.mdedetrich"
+
 version := "1.0.0"
 
 libraryDependencies ++= Seq(
