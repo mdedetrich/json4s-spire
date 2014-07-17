@@ -45,12 +45,23 @@ object Serializers {
     {case x:FixedPoint => JDouble(x.toDouble)}
   ))
 
+  private final class NumberSerializerDecimal extends CustomSerializer[Number](format => (
+    {case JDouble(x) => Number(x)},
+    {case x:Number => JDecimal(x.toBigDecimal)}
+  ))
+
+  private final class NumberSerializerDouble extends CustomSerializer[Number](format => (
+    {case JDecimal(x) => Number(x)},
+    {case x:Number => JDecimal(x.toDouble)}
+  ))
+
   def withDecimal(implicit fixedScale:FixedScale) = Seq(
     new RationalSerializerDecimal,
     new NaturalSerializer,
     new AlgebraicSerializerDecimal,
     new SafeLongSerializer,
-    new FixedPointSerializerDecimal
+    new FixedPointSerializerDecimal,
+    new NumberSerializerDecimal
   )
 
   def withDouble(implicit fixedScale:FixedScale) = Seq(
@@ -58,7 +69,8 @@ object Serializers {
     new NaturalSerializer,
     new AlgebraicSerializerDouble,
     new SafeLongSerializer,
-    new FixedPointSerializerDouble
+    new FixedPointSerializerDouble,
+    new NumberSerializerDouble
   )
 
 }
