@@ -1,6 +1,6 @@
 name := "json4s-spire"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.7"
 
 crossScalaVersions := Seq("2.11.7","2.10.5")
 
