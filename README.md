@@ -5,13 +5,9 @@ you to easily decompose spire values to Json and extract Json values into spire 
 
 # Installation
 
-First make sure you have the `mdedetrich-releases` repository in your `build.sbt` or your `project/<somefile>.scala`.
+Simply add the following dependency to `libraryDependencies`
 
-    resolvers ++= Seq("mdedetrich-releases" at "http://artifactory.mdedetrich.com/libs-release")
-
-Then simply add the following dependency to `libraryDependencies`
-
-    "com.mdedetrich" %% "json4s-spire" % "1.0.0"
+    "org.mdedetrich" %% "json4s-spire" % "1.0.0"
     
 # Usage
 
