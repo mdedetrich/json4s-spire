@@ -6,11 +6,11 @@ crossScalaVersions := Seq("2.11.7","2.10.5")
 
 organization := "org.mdedetrich"
 
-version := "1.0.0"
+version := "1.1.0"
 
 libraryDependencies ++= Seq(
   "org.spire-math" %% "spire" % "0.7.4",
-  "org.json4s" %% "json4s-jackson" % "3.2.10",
+  "org.json4s" %% "json4s-jackson" % "3.3.0",
   "org.scalatest" % "scalatest" % "2.2.0" % "test" cross CrossVersion.binary
 )
 
