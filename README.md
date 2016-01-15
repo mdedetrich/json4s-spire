@@ -7,7 +7,7 @@ you to easily decompose spire values to Json and extract Json values into spire 
 
 Simply add the following dependency to `libraryDependencies`
 
-    "org.mdedetrich" %% "json4s-spire" % "1.2.0"
+    "org.mdedetrich" %% "json4s-spire" % "1.3.0"
     
 # Usage
 
