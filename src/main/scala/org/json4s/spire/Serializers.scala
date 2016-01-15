@@ -7,7 +7,7 @@ import spire.math._
 object Serializers {
   private final class RationalSerializerDecimal extends CustomSerializer[Rational](format => (
     {case JDecimal(x) => Rational(x)},
-    {case x:Rational => JDecimal(x.toBigDecimal)}
+    {case x:Rational => JDecimal(x.toBigDecimal(BigDecimal.defaultMathContext))}
   ))
 
   private final class RationalSerializerDouble extends CustomSerializer[Rational](format => (
@@ -22,7 +22,7 @@ object Serializers {
 
   private final class AlgebraicSerializerDecimal extends CustomSerializer[Algebraic](format => (
     {case JDecimal(x) => Algebraic(x)},
-    {case x:Algebraic => JDecimal(x.toBigDecimal)}
+    {case x:Algebraic => JDecimal(x.toBigDecimal(BigDecimal.defaultMathContext))}
   ))
 
   private final class AlgebraicSerializerDouble extends CustomSerializer[Algebraic](format => (
